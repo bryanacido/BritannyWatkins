@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tapping Circle - Brittany Watkins</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            font-size: 16px;
+        }
+
+        /* Header */
+        .header {
+            background: #1a1a1a;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header .logo-text {
+            color: #fff;
+            font-size: 18px;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+
+        .header .logo-text span {
+            color: #c9a66b;
+        }
+
+        /* Hero Section */
+        .hero-wrapper {
+            background: #1a1a1a;
+            padding: 60px 80px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content {
+            background: #1a1a1a;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-welcome {
+            color: #c9a66b;
+            font-size: 13px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+            font-size: 56px;
+            font-weight: 400;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            color: #c9a66b;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .hero-description {
+            color: #b0b0b0;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .hero-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 8px;
+            max-width: 400px;
+            margin-left: auto;
+        }
+
+        .hero-images img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Membership Section */
+        .membership {
+            padding: 80px 80px;
+            background: #fff;
+        }
+
+        .membership-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .membership-title::after {
+            content: '';
+            display: block;
+            width: 250px;
+            height: 1px;
+            background: #1a1a1a;
+            margin: 25px auto 0;
+        }
+
+        .membership-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .membership-card {
+            background: #f8f8f8;
+            border-radius: 6px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .membership-card-content {
+            padding: 28px 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .membership-card-content p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .membership-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: #1a1a1a;
+            line-height: 1.3;
+        }
+
+        .membership-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .membership-card ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+
+        .membership-card ul li {
+            font-size: 14px;
+            color: #555;
+            padding: 4px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .membership-card ul li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: #c9a66b;
+            font-weight: 600;
+        }
+
+        .card-value {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .card-value span:first-child {
+            font-size: 15px;
+        }
+
+        .card-value span:last-child {
+            color: #c9a66b;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        /* Support Section */
+        .support-wrapper {
+            background: #1a1a1a;
+            padding: 80px 80px;
+        }
+
+        .support-section {
+            background: #1a1a1a;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            max-width: 1000px;
+            margin: 0 auto;
+            align-items: stretch;
+        }
+
+        .support-image {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .support-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .support-content {
+            background: #1a1a1a;
+            padding: 45px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .support-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .support-description {
+            font-size: 16px;
+            color: #b0b0b0;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .pricing-box {
+            background: #fff;
+            padding: 22px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .total-value {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .total-value strong {
+            color: #c9a66b;
+        }
+
+        .your-price {
+            font-size: 17px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .your-price strong {
+            color: #d4442c;
+        }
+
+        .student-discount {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .student-discount .code {
+            background: #d4442c;
+            color: #fff;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 8px;
+        }
+
+        .cancel-info {
+            font-size: 13px;
+            color: #777;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #d4442c;
+            color: #fff;
+            padding: 16px 45px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background: #b93a26;
+        }
+
+        /* Coffee Section */
+        .coffee-wrapper {
+            background: #f5f0eb;
+            padding: 80px 80px;
+        }
+
+        .coffee-section {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #f5f0eb;
+            border-radius: 12px;
+            overflow: hidden;
+            align-items: stretch;
+        }
+
+        .coffee-content {
+            padding: 45px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #f5f0eb;
+        }
+
+        .coffee-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .coffee-subtitle {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .coffee-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .coffee-list li {
+            font-size: 15px;
+            color: #555;
+            padding: 6px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .coffee-list li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #c9a66b;
+            font-weight: bold;
+        }
+
+        .coffee-image {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .coffee-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Comparison Section */
+        .comparison-section {
+            padding: 80px 80px;
+            background: #fff;
+        }
+
+        .comparison-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #1a1a1a;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .comparison-column {
+            padding: 0;
+        }
+
+        .comparison-column h3 {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .comparison-price {
+            font-size: 52px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .comparison-price.expense {
+            color: #1a1a1a;
+        }
+
+        .comparison-price.value {
+            color: #d4442c;
+        }
+
+        .comparison-price span {
+            font-size: 18px;
+            font-weight: 400;
+            color: #888;
+        }
+
+        .comparison-list {
+            list-style: none;
+        }
+
+        .comparison-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+            color: #555;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .comparison-list li::before {
+            content: '\2717';
+            color: #ccc;
+            font-size: 14px;
+            margin-top: 2px;
+        }
+
+        .comparison-list.included li::before {
+            content: '\2713';
+            color: #c9a66b;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 80px;
+            background: #fff;
+            position: relative;
+        }
+
+        .testimonials-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .testimonials-title::after {
+            content: '';
+            display: block;
+            width: 300px;
+            height: 1px;
+            background: #ddd;
+            margin: 25px auto 0;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .testimonial-slides {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 50px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .testimonial-slide::before {
+            content: '\201C\201C';
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 200px;
+            color: #f5f5f5;
+            font-family: Georgia, serif;
+            z-index: 0;
+            line-height: 0.5;
+        }
+
+        .testimonial-highlight {
+            color: #1a1a1a;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-text {
+            font-size: 17px;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-author {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author img {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .testimonial-author-name {
+            font-weight: 600;
+            font-size: 18px;
+            color: #1a1a1a;
+        }
+
+        .slider-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: #ccc;
+            z-index: 10;
+            transition: color 0.3s;
+        }
+
+        .slider-nav:hover {
+            color: #1a1a1a;
+        }
+
+        .slider-nav.prev {
+            left: 0;
+        }
+
+        .slider-nav.next {
+            right: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            padding: 25px 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-left {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-logo img {
+            height: 30px;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-right a {
+            color: #888;
+            font-size: 13px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-right a:hover {
+            color: #c9a66b;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-wrapper {
+                padding: 50px 40px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .hero-content {
+                padding: 20px 0;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-images {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            .hero-images img {
+                height: 120px;
+            }
+
+            .membership {
+                padding: 60px 40px;
+            }
+
+            .membership-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .support-wrapper {
+                padding: 60px 40px;
+            }
+
+            .coffee-wrapper {
+                padding: 60px 40px;
+            }
+
+            .support-section {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .support-content {
+                padding: 40px;
+                order: 1;
+            }
+
+            .support-image {
+                order: 2;
+                height: 300px;
+            }
+
+            .coffee-section {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+            }
+
+            .coffee-content {
+                padding: 40px;
+            }
+
+            .coffee-image {
+                height: 300px;
+                max-height: 300px;
+            }
+
+            .comparison-section {
+                padding: 60px 40px;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .testimonials {
+                padding: 60px 40px;
+            }
+
+            .footer {
+                padding: 25px 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .hero-wrapper {
+                padding: 40px 15px;
+            }
+
+            .hero-content {
+                padding: 30px 20px;
+            }
+
+            .hero-title {
+                font-size: 28px;
+            }
+
+            .hero-subtitle {
+                font-size: 16px;
+            }
+
+            .hero-images {
+                height: 280px;
+            }
+
+            .membership {
+                padding: 50px 20px;
+            }
+
+            .membership-title {
+                font-size: 28px;
+            }
+
+            .membership-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .support-wrapper {
+                padding: 40px 15px;
+            }
+
+            .support-content {
+                padding: 30px 20px;
+            }
+
+            .support-title {
+                font-size: 28px;
+            }
+
+            .coffee-wrapper {
+                padding: 40px 15px;
+            }
+
+            .coffee-content {
+                padding: 30px 20px;
+            }
+
+            .coffee-title {
+                font-size: 28px;
+            }
+
+            .comparison-section {
+                padding: 50px 20px;
+            }
+
+            .comparison-title {
+                font-size: 24px;
+            }
+
+            .comparison-price {
+                font-size: 36px;
+            }
+
+            .testimonials {
+                padding: 50px 20px;
+            }
+
+            .testimonials-title {
+                font-size: 24px;
+            }
+
+            .testimonial-slide {
+                padding: 30px 20px;
+            }
+
+            .testimonial-highlight {
+                font-size: 22px;
+            }
+
+            .testimonial-text {
+                font-size: 15px;
+            }
+
+            .testimonial-author img {
+                width: 120px;
+                height: 150px;
+            }
+
+            .slider-nav {
+                font-size: 20px;
+            }
+
+            .footer {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .footer-right {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 24px;
+            }
+
+            .hero-images {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .hero-images img {
+                height: 200px;
+            }
+
+            .support-title,
+            .coffee-title {
+                font-size: 26px;
+            }
+
+            .btn-primary {
+                padding: 12px 30px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <img src="assets/footer-logo 1.png" alt="Brittany Watkins" style="height: 35px;">
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero-wrapper">
+        <section class="hero">
+            <div class="hero-content">
+                <p class="hero-welcome">WELCOME TO</p>
+                <h1 class="hero-title">THE TAPPING CIRCLE</h1>
+                <p class="hero-subtitle">The Ongoing Support System for Lasting Emotional and Physical Transformation</p>
+                <p class="hero-description">
+                    You've already taken the first step by joining one of our programs. Now, it's time to stay on track, go deeper, and create permanent change. The Tapping Circle is your next-level support container - designed to help you continue healing emotional weight blocks, food cravings, self-sabotage patterns, and more, with structure, community, and expert guidance.
+                </p>
+                <p class="hero-description">
+                    Inside The Tapping Circle, you'll never feel lost, alone, or overwhelmed again. You'll get direct access to a rotating lineup of live support, expert guidance, study groups, and personalized help - so your progress feels inevitable.
+                </p>
+            </div>
+            <div class="hero-images">
+                <img src="assets/Rectangle 53.png" alt="Transformation">
+                <img src="assets/Rectangle 54.png" alt="Support">
+                <img src="assets/Rectangle 55.png" alt="Community">
+                <img src="assets/Rectangle 57.png" alt="Healing">
+            </div>
+        </section>
+    </div>
+
+    <!-- Membership Section -->
+    <section class="membership">
+        <h2 class="membership-title">WHAT'S INCLUDED IN YOUR MEMBERSHIP:</h2>
+        <div class="membership-grid">
+            <!-- Card 1 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Ongoing Live Study Groups</h3>
+                    <p>Join weekly small-group sessions led by certified Echo Tapping Therapy coaches. Instead of going through modules alone, you'll learn, tap, and ask questions in real-time with expert guidance - at your own pace, on your own schedule.</p>
+                    <p>These classes run in 6-week cycles and are designed so you can jump in anytime - each week stands alone. Come to one class, or come to all of them. Your path is up to you.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>$588 / Month</span>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Monthly Breakthrough Busters with Brittany</h3>
+                    <p>On these powerful live sessions, Brittany helps you get unstuck fast - whether you're overwhelmed, plateaued, or just unsure what to do next. You'll leave each call with clarity, focus, and a custom action plan for the next 2 weeks.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>$1,999 / Month</span>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Fat Loss Expert Designed for the 40+ Female Body</h3>
+                    <p>Once a month, our fat loss expert hosts a live Q&A and strategy session - covering how to eat, move, and biohack your hormones for sustainable fat loss. No more one-size-fits-all advice. This is specifically for maturing women navigating the unique challenges of midlife metabolism, insulin resistance, and hormone shifts.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>$250 / Month</span>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Transformation Tune-Ups: Your Audio Vault</h3>
+                    <p>Get instant access to Brittany's signature tapping audios - designed for quick relief, deep rewiring, and long-term change.</p>
+                    <ul>
+                        <li>Instant help when you have a craving</li>
+                        <li>Want to eat emotionally</li>
+                        <li>Self sabotage</li>
+                        <li>Confidence boost</li>
+                    </ul>
+                    <p>Whatever your struggle is, there's a tune-up ready to walk you through it.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>$588 / Month</span>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Tap with Britt: Monthly Live Tapping Sessions</h3>
+                    <p>Join Brittany live each month for a powerful group tapping session designed to help you break through one of your deepest emotional or mindset blocks. These sessions are focused, high-energy, and targeted toward whatever's keeping you stuck that month - food cravings, boundaries, negative self talk, confidence, or motivation. You'll leave feeling lighter, clearer, and ready to move forward.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>$1,000 / Month</span>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>50% Off One-on-One Coaching</h3>
+                    <p>Need deeper support? As a Tapping Circle member, you'll get 50% off private coaching with certified Echo Tapping practitioners. Click here to see discounted member rates.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>$588 / Month</span>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Buddy Groups (Live Support Calls, Multiple Times a Week)</h3>
+                    <p>Join a live small-group call to share wins and tap through any emotional or mindset challenges that are coming up for you that day or week. These supportive sessions are here to help you feel seen, held, and guided - no matter what you're going through. With multiple calls per week across time zones, there's almost always a time that works for you. Come to one or come to all. You'll never feel alone on this journey again.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>Priceless</span>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Private Community</h3>
+                    <p>Get support from fellow members, coaches, and Brittany inside the members-only Facebook group.</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>Priceless</span>
+                </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="membership-card">
+                <div class="membership-card-content">
+                    <h3>Monthly Habit Stack</h3>
+                    <p>Each month, you'll be guided to add one simple, healthy habit into your routine - things that upgrade your energy, eating habits, nutrition, sleep, and lifestyle without feeling overwhelming. These are totally optional, but when you stack these habits with your tapping, they compound fast. In 12 months, you won't even recognize yourself (in the best way).</p>
+                </div>
+                <div class="card-value">
+                    <span>Value:</span>
+                    <span>$250 / Month</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <div class="support-wrapper">
+        <section class="support-section">
+            <div class="support-image">
+                <img src="assets/Rectangle 50-1.png" alt="Support">
+            </div>
+            <div class="support-content">
+                <h2 class="support-title">YOU'VE NEVER HAD THIS MUCH SUPPORT.</h2>
+                <p class="support-description">
+                    This isn't just a library. It's a living, breathing coaching container - with tools, classes, experts, and breakthroughs built in. You'll never have to wonder, "What should I be focusing on?" again. Inside The Tapping Circle, the path is clear - and you're never walking it alone.
+                </p>
+                <div class="pricing-box">
+                    <p class="total-value">Total Monthly Value: <strong>$5,013</strong></p>
+                    <p class="your-price">Your Price: <strong>$297/month</strong> (after 7 days free!)</p>
+                    <p class="student-discount">Student Discount $197/month <span class="code">coupon code: student</span></p>
+                    <p class="cancel-info">Cancel anytime. No contract. All transformation.</p>
+                </div>
+                <a href="#" class="btn-primary">Try It Free</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Coffee Section -->
+    <div class="coffee-wrapper">
+        <section class="coffee-section">
+            <div class="coffee-content">
+                <h2 class="coffee-title">WHAT IF HEALING DIDN'T COST MORE THAN COFFEE?</h2>
+                <p class="coffee-subtitle">You can access the Tapping Circle for less than $6 a day...</p>
+                <ul class="coffee-list">
+                    <li>Less than a fancy coffee.</li>
+                    <li>Less than a delivery fee.</li>
+                    <li>Less than the emotional toll of staying stuck.</li>
+                </ul>
+                <div class="pricing-box">
+                    <p class="your-price">Your Price: <strong>$297/month</strong> (after 7 days free!)</p>
+                    <p class="student-discount">Student Discount $197/month <span class="code">coupon code: student</span></p>
+                    <p class="cancel-info">Cancel anytime. No contract. All transformation.</p>
+                </div>
+                <a href="#" class="btn-primary">Try It Free</a>
+            </div>
+            <div class="coffee-image">
+                <img src="assets/Rectangle 50.png" alt="Coffee">
+            </div>
+        </section>
+    </div>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <h2 class="comparison-title">WHAT YOU CAN STOP PAYING FOR VS. WHAT YOU GET IN THE TAPPING CIRCLE</h2>
+        <div class="comparison-grid">
+            <div class="comparison-column">
+                <h3>Monthly Expenses You Can Replace</h3>
+                <p class="comparison-price expense">$1,527<span>/mo</span></p>
+                <ul class="comparison-list">
+                    <li>Therapist ($150-$300/session)</li>
+                    <li>Nutritionist ($150/month)</li>
+                    <li>Online courses with no support ($200-$500)</li>
+                    <li>Mindset apps ($20-$40/month)</li>
+                    <li>Life coach ($200-$500/month)</li>
+                    <li>Group programs that lack follow-up ($97/mo)</li>
+                    <li>Binge-food grocery splurges ($100-$300/mo)</li>
+                </ul>
+            </div>
+            <div class="comparison-column">
+                <h3>Included In The Tapping Circle</h3>
+                <p class="comparison-price value">$297<span>/mo</span></p>
+                <ul class="comparison-list included">
+                    <li>Live breakthrough sessions 2x/month with Brittany</li>
+                    <li>Monthly fat loss + hormone support expert sessions</li>
+                    <li>Full emotional healing program + support study groups</li>
+                    <li>On-demand tapping sessions for any emotional challenge</li>
+                    <li>Group coaching and personalized breakthrough support</li>
+                    <li>Ongoing access to calls, coaches, community, and content</li>
+                    <li>Emotional rewiring to stop cravings + impulse shopping</li>
+                </ul>
+                <a href="#" class="btn-primary" style="margin-top: 30px;">Try It Free</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2 class="testimonials-title">REAL WOMEN. REAL BREAKTHROUGHS.</h2>
+        <div class="testimonial-slider">
+            <button class="slider-nav prev" onclick="moveSlide(-1)">&#8249;</button>
+            <div class="testimonial-slides" id="testimonialSlides">
+                <!-- Slide 1 -->
+                <div class="testimonial-slide">
+                    <p class="testimonial-highlight">So cool!</p>
+                    <p class="testimonial-text">
+                        #win! After our group tapping session yesterday, I became much more clear about a situation and witnessed the validity of my feelings. In this current situation in my life I would normally keep quiet and spend a lot of energy churning around my unspoken needs inside. When we did the "Wouldn't it be nice if..." positive shift tapping, I knew immediately that it was 100% appropriate that I speak up to resolve this issue. And guess what! Even though it took courage, it was worth it...No one hates me and it's resolved! So cool!
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/source/elegant-senior-woman-smiling-camera-outdoor-urban-setting.jpg" alt="Erica M.">
+                        <span class="testimonial-author-name">Erica M.</span>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="testimonial-slide">
+                    <p class="testimonial-highlight">Only 4lbs away from my halfway goal</p>
+                    <p class="testimonial-text">
+                        #win I am officially back in ONE-derland and plan on residing here permanently!!!! Now that I'm in month 7 of this program, I'm weighing once a month, and was hoping I'd be under 200 today, wooohoooooo!!!!! Also only 4 pounds from being halfway to my goal!!!! (I tap EVERY SINGLE DAY, even if it's only for 3 minutes, I think that's really helping to keep the emotional eating away.) SO EXCITED!!!!!!
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/source/middle-aged-hispanic-business-person.jpg" alt="Khrys K.">
+                        <span class="testimonial-author-name">Khrys K.</span>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="testimonial-slide">
+                    <p class="testimonial-highlight">Eating better & less</p>
+                    <p class="testimonial-text">
+                        #win been working a lot on my feeling unsafe, and it's paying off. I'm feeling more empowered, less triggered, sleeping better (finally!) and eating better/less. I've re-listened to Miki's coaching call from last week several times, where she helped me tap on my safety issues, and that's helped a lot. It feels good to face this head on. I feel more like the grown-ass woman I am, and much less like the defenseless child I was.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/source/portrait-happy-mature-woman-looking-camera-home.jpg" alt="Lisa A.">
+                        <span class="testimonial-author-name">Lisa A.</span>
+                    </div>
+                </div>
+                <!-- Slide 4 -->
+                <div class="testimonial-slide">
+                    <p class="testimonial-highlight">Changed my brain, emotions & relationship with myself</p>
+                    <p class="testimonial-text">
+                        I am not a person who posts things online and I haven't seen many posts on here about members wins but I just want to say that again today I had the experience of looking at a food that I used to habitually eat and I had no desire for it. I can't make myself want food sometimes when I go to emotionally eat. This program has changed my brain, my emotions, and my relationship with myself. As a clinical social worker for over 40 years and someone who has been familiar with tapping for probably 30 years, this program has been phenomenal and magical for me.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/source/expressive-senior-woman-posing (1).jpg" alt="Suzanne P.">
+                        <span class="testimonial-author-name">Suzanne P.</span>
+                    </div>
+                </div>
+                <!-- Slide 5 -->
+                <div class="testimonial-slide">
+                    <p class="testimonial-highlight">Feeling much better</p>
+                    <p class="testimonial-text">
+                        I just did my first tapping circle. When I was tapping on my craving for gummy bears/candy, the good feelings of fun and connection I used to share with my now adult daughter as a child came up, along with the feelings of guilt that I was not the best parent I could be. I did not realize that was all wrapped up in gummy bears lol feeling much better about it now
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="assets/source/summertime-mature-people-age-leisure-concept-outdoor-shot-stylish-caucasian-woman-pensioner-with-gray-short-hair-wearing-yellow-cardigan-relaxing-wild-nature-with-smile.jpg" alt="Red A.">
+                        <span class="testimonial-author-name">Red A.</span>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-nav next" onclick="moveSlide(1)">&#8250;</button>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.getElementById('testimonialSlides');
+        const totalSlides = 5;
+
+        function moveSlide(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+
+        // Auto-advance every 6 seconds
+        setInterval(() => moveSlide(1), 6000);
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-left">
+            BrittanyWatkins.com | Copyright &copy; 2025
+        </div>
+        <div class="footer-logo">
+            <img src="assets/footer-logo 1-1.png" alt="Brittany Watkins">
+        </div>
+        <div class="footer-right">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
+</body>
+</html>

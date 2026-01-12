@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brittany Watkins - Exclusive Offer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .header {
+            background-color: #1a1a1a;
+            padding: 20px 0;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .logo {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .logo span {
+            font-weight: 300;
+        }
+
+        .header-divider {
+            width: 100%;
+            max-width: 600px;
+            height: 4px;
+            margin: 0 auto 20px;
+            background: linear-gradient(90deg, #2A2C2F 0%, #80868A 23%, #80868A 80%, #2A2C2F 100%);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            color: #888;
+            font-size: 14px;
+            padding: 8px 20px;
+        }
+
+        .step.active {
+            background-color: #444;
+            border-radius: 4px;
+            color: #E07B6B;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .hero-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding-right: 20px;
+        }
+
+        .exclusive-badge {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            font-size: 12px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .discount-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            color: #D85A4A;
+            font-weight: 400;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .hero-title-divider {
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            margin-bottom: 20px;
+        }
+
+        .hero-description {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #D85A4A;
+            color: #fff;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #c44a3a;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* What You Get Section */
+        .what-you-get {
+            background-color: #f5f5f5;
+            padding: 80px 20px;
+        }
+
+        .what-you-get-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .what-you-get-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .benefits-list li {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .benefits-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #333;
+        }
+
+        .therapy-image-container {
+            position: relative;
+        }
+
+        .therapy-image {
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Choose Your Plan Section */
+        .choose-plan {
+            background-color: #fff;
+            padding: 80px 20px;
+        }
+
+        .choose-plan-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .choose-plan h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .section-underline {
+            width: 100%;
+            height: 1px;
+            background-color: #ddd;
+            margin-bottom: 30px;
+        }
+
+        .plan-intro {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        .coaching-title {
+            color: #02828E;
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
+
+        .coaching-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        /* Pricing Table */
+        .pricing-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .pricing-table th {
+            background-color: #f9f9f9;
+            padding: 20px 15px;
+            text-align: left;
+            font-size: 14px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .pricing-table th:first-child {
+            width: 25%;
+        }
+
+        .pricing-table th.plan-header {
+            color: #D85A4A;
+            font-weight: 600;
+        }
+
+        .pricing-table td {
+            padding: 20px 15px;
+            font-size: 13px;
+            color: #555;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .pricing-table td:first-child {
+            background-color: #fafafa;
+        }
+
+        .pricing-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .table-icon {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #02828E;
+            font-weight: 600;
+        }
+
+        .table-icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .price-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .price-per-session {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        .savings {
+            color: #02828E;
+            font-weight: 600;
+        }
+
+        .add-to-order-btn {
+            display: inline-block;
+            background-color: #D85A4A;
+            color: #fff;
+            padding: 12px 35px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: 4px;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .add-to-order-btn:hover {
+            background-color: #c44a3a;
+        }
+
+        .button-cell {
+            text-align: center;
+            padding: 25px 15px !important;
+        }
+
+        /* Why Sessions Work Section */
+        .why-sessions {
+            background-color: #1a1a1a;
+            padding: 80px 20px;
+        }
+
+        .why-sessions-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .why-sessions h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 400;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .why-sessions .section-underline {
+            background-color: #444;
+        }
+
+        .why-sessions p {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1a1a1a;
+            padding: 40px 20px;
+            border-top: 1px solid #333;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-left {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer-center {
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 20px;
+        }
+
+        .footer-right {
+            font-size: 12px;
+            color: #888;
+        }
+
+        .footer-right a {
+            color: #888;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+
+        .footer-right a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero-container,
+            .what-you-get-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                padding-right: 0;
+                order: 1;
+            }
+
+            .hero-image {
+                order: 0;
+                margin-bottom: 30px;
+            }
+
+            .hero-image img {
+                max-width: 350px;
+            }
+
+            .discount-text {
+                font-size: 56px;
+            }
+
+            .what-you-get-content {
+                order: 1;
+            }
+
+            .therapy-image-container {
+                order: 0;
+                margin-bottom: 30px;
+            }
+
+            .benefits-list li {
+                text-align: left;
+            }
+
+            .pricing-table {
+                font-size: 12px;
+            }
+
+            .pricing-table th,
+            .pricing-table td {
+                padding: 12px 8px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-right a {
+                margin: 0 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .steps {
+                gap: 10px;
+            }
+
+            .step {
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .discount-text {
+                font-size: 42px;
+            }
+
+            .hero-title {
+                font-size: 22px;
+            }
+
+            .choose-plan h2,
+            .why-sessions h2,
+            .what-you-get-content h2 {
+                font-size: 26px;
+            }
+
+            .pricing-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Brittany<span>WATKINS</span></div>
+            <div class="header-divider"></div>
+            <div class="steps">
+                <div class="step">Step 1 : Information</div>
+                <div class="step active">Step 2 : Customize</div>
+                <div class="step">Step 3 : Finalize</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="exclusive-badge">Exclusive Offer for Tapping Circle Members</span>
+                <div class="discount-text">50% OFF</div>
+                <h1 class="hero-title">Private Echo Tapping Therapy™<br>Sessions for Weight Loss Psychology</h1>
+                <div class="hero-title-divider"></div>
+                <p class="hero-description">
+                    Break through emotional eating, perfectionism, and self-sabotage patterns with private support from certified Echo Tapping Coaches — now at half the regular price.
+                </p>
+                <p class="hero-description">
+                    These expert coaches aren't just trained in Brittany's proprietary Echo Tapping Therapy™ method — they also specialize in weight loss psychology, emotional eating, and are certified in fat loss and nutrition. That means you're not just getting deep emotional healing... you're also getting smart, customized action steps to help you spark weight loss safely and effectively — without extreme diets, fasting, or rigid plans.
+                </p>
+                <p class="hero-description">
+                    Each session is tailored to your unique lifestyle, life stage, and hormonal profile to support sustainable, aligned results from the inside out.
+                </p>
+                <a href="#choose-plan" class="cta-button">Choose Your Plan</a>
+            </div>
+            <div class="hero-image">
+                <img src="assets/Rectangle 54.png" alt="Brittany enjoying food">
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get Section -->
+    <section class="what-you-get">
+        <div class="what-you-get-container">
+            <div class="what-you-get-content">
+                <h2>WHAT YOU GET IN EVERY<br>PRIVATE SESSION:</h2>
+                <ul class="benefits-list">
+                    <li>60-minute 1:1 Echo Tapping Therapy™ session</li>
+                    <li>Led by a Brittany-Verified Coach trained in weight loss psychology, emotional eating, fat loss, and nutrition</li>
+                    <li>Custom support for cravings, plateaus, boundaries, burnout, or trauma</li>
+                    <li>Trackable breakthroughs in mindset, habits, and emotional patterns</li>
+                    <li>Deep support between Tapping Circle calls for faster, lasting results</li>
+                </ul>
+                <a href="#choose-plan" class="cta-button">Choose Your Plan</a>
+            </div>
+            <div class="therapy-image-container">
+                <img src="assets/Group 38216.png" alt="1:1 Echo Tapping Therapy Session" class="therapy-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Choose Your Plan Section -->
+    <section class="choose-plan" id="choose-plan">
+        <div class="choose-plan-container">
+            <h2>CHOOSE YOUR PLAN & SAVE:</h2>
+            <div class="section-underline"></div>
+            <p class="plan-intro">
+                Tapping Circle members pay only $147/session (vs. $250), whether you choose monthly support or a flexible 12-pack.
+            </p>
+            <p class="plan-intro">
+                The monthly option is best for members who want ongoing support without delays—ideal if you're moving through something deep and want steady momentum.
+            </p>
+            <p class="plan-intro">
+                The 12-session pack is best for members who want flexibility but understand they'll need to wait for coach availability.
+            </p>
+
+            <h3 class="coaching-title">1:1 Private Coaching with a Weight Loss Psychology ETT™ Coach</h3>
+            <p class="coaching-subtitle">Special Pricing for Tapping Circle Members</p>
+
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th class="plan-header">Monthly Membership Plan<br>(Most Support)</th>
+                        <th class="plan-header">12-Session Flex Pack (Most<br>Flexibility)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="table-icon">
+                                <img src="assets/Frame-3.svg" alt="Thumbs up">
+                                Best for you if...
+                            </div>
+                        </td>
+                        <td>You want guaranteed weekly sessions and consistent support through challenging work.</td>
+                        <td>You prefer to book sessions as needed and don't mind waiting for availability.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-icon">
+                                <img src="assets/Frame-4.svg" alt="What you get">
+                                What You Get
+                            </div>
+                        </td>
+                        <td>2 private sessions/month<br>Priority scheduling<br>Reserved weekly time slot</td>
+                        <td>12 sessions total<br>Book anytime over 12 months<br>Flexible usage (weekly or spread out)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-icon">
+                                <img src="assets/Frame-2.svg" alt="Price">
+                                Your Price
+                            </div>
+                        </td>
+                        <td>
+                            <span class="price-value">$294/month</span><br>
+                            <span class="price-per-session">($147/session)</span>
+                        </td>
+                        <td>
+                            <span class="price-value">$1,764 one-time</span><br>
+                            <span class="price-per-session">($147/session)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-icon">
+                                <img src="assets/Frame-1.svg" alt="Comparison">
+                                Full Price Comparison
+                            </div>
+                        </td>
+                        <td>
+                            <span class="original-price">Normally $500/month</span><br>
+                            <span class="price-per-session">($250 x 2 sessions)</span>
+                        </td>
+                        <td>
+                            <span class="original-price">Normally $3,000 total</span><br>
+                            <span class="price-per-session">($250 x 12 sessions)</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="table-icon">
+                                <img src="assets/Frame.svg" alt="Savings">
+                                Your Savings
+                            </div>
+                        </td>
+                        <td><span class="savings">Save $204/month</span></td>
+                        <td><span class="savings">Save $1,236 total</span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="button-cell">
+                            <button class="add-to-order-btn">Add To Order</button>
+                        </td>
+                        <td class="button-cell">
+                            <button class="add-to-order-btn">Add To Order</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Why These Sessions Work Section -->
+    <section class="why-sessions">
+        <div class="why-sessions-container">
+            <h2>WHY THESE SESSIONS WORK:</h2>
+            <div class="section-underline"></div>
+            <p>
+                Echo Tapping isn't like regular talk therapy. These sessions go straight to the emotional root cause—clearing out decades of patterns in a matter of weeks. When combined with the tools inside the Tapping Circle, you'll get personal, high-touch support designed to create real emotional freedom.
+            </p>
+            <a href="#choose-plan" class="cta-button">Choose Your Plan</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                BrittanyWatkins.com | Copyright &copy; 2025
+            </div>
+            <div class="footer-center">
+                <img src="assets/footer-logo 1.png" alt="Brittany Watkins" class="footer-logo">
+            </div>
+            <div class="footer-right">
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
