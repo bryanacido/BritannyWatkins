@@ -105,21 +105,44 @@
         .hero-images {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            grid-template-rows: repeat(6, 1fr);
             gap: 8px;
-            max-width: 400px;
+            max-width: 500px;
             margin-left: auto;
+            height: 450px;
         }
 
         .hero-images img {
             width: 100%;
-            height: 150px;
+            height: 100%;
             object-fit: cover;
             border-radius: 8px;
         }
 
-        .hero-images img:first-child {
+        .hero-images img:nth-child(1) {
+            grid-column: 1;
+            grid-row: 1 / 4;
             object-position: top;
+        }
+
+        .hero-images img:nth-child(2) {
+            grid-column: 1;
+            grid-row: 4 / 7;
+        }
+
+        .hero-images img:nth-child(3) {
+            grid-column: 2;
+            grid-row: 1 / 3;
+        }
+
+        .hero-images img:nth-child(4) {
+            grid-column: 2;
+            grid-row: 3 / 5;
+        }
+
+        .hero-images img:nth-child(5) {
+            grid-column: 2;
+            grid-row: 5 / 7;
         }
 
         /* Membership Section */
@@ -698,10 +721,7 @@
             .hero-images {
                 max-width: 100%;
                 margin: 0 auto;
-            }
-
-            .hero-images img {
-                height: 120px;
+                height: 400px;
             }
 
             .membership {
@@ -789,7 +809,7 @@
             }
 
             .hero-images {
-                height: 280px;
+                height: 350px;
             }
 
             .membership {
@@ -887,12 +907,8 @@
             }
 
             .hero-images {
-                grid-template-columns: 1fr;
-                height: auto;
-            }
-
-            .hero-images img {
-                height: 200px;
+                grid-template-columns: 1fr 1fr;
+                height: 300px;
             }
 
             .support-title,
@@ -931,8 +947,9 @@
             </div>
             <div class="hero-images">
                 <img src="assets/Rectangle 53.png" alt="Transformation">
-                <img src="assets/Rectangle 54.png" alt="Support">
                 <img src="assets/Rectangle 55.png" alt="Community">
+                <img src="assets/Rectangle 54.png" alt="Support">
+                <img src="assets/Rectangle 58.png" alt="Lifestyle">
                 <img src="assets/Rectangle 57.png" alt="Healing">
             </div>
         </section>
