@@ -7,12 +7,12 @@ This project contains landing pages for Brittany Watkins' "The Tapping Circle" p
 ```
 Emma/
 ├── Sales Page/
-│   ├── index.html          # Main sales page
+│   ├── sales_page.html          # Main sales page
 │   ├── assets/             # Images, fonts, and other media
 │   └── Brittany Watkins_Sales Page.pdf
 │
 ├── Offer Page/
-│   ├── index.html          # Exclusive offer/checkout page
+│   ├── offer_page.html          # Exclusive offer/checkout page
 │   ├── assets/             # Images, fonts, and other media
 │   └── Brittany Watkins_Offer page.pdf
 │
